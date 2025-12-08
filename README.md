@@ -53,4 +53,64 @@ CINDI/
 └── README.md               # Project documentation
 ```
 
+## 📊 Data Preparation
+
+CINDI expects multivariate time series data. The default data loader supports:
+
+1. **Grid Loss Data:** Real-world power consumption and grid loss measurements.
+2. **FSB (Fully Synthetic Benchmark):** Synthetic sequences from the mTADS repository.
+
+To use your own data, ensure it is formatted as a CSV with time-indexed rows and feature columns.
+> columns = ['timestamp', 'value-0', 'value-1', ..., 'value-n', 'is_anomaly']
+
+## 🏃 Usage
+
+### 1. Basic Training & Imputation Loop
+
+To run the full CINDI pipeline (Train $\to$ Detect $\to$ Impute $\to$ Repeat).
+
+[CINDI Pipeline Illustration](images/FlowImputationOverview.pdf)
+
+### 2. Anomaly Detection (Downstream Task)
+
+After improving the dataset, it runs the anomaly detection on the test set.
+
+```shell
+python experiment_run.py --project="selective_loop_v1-fsb" --dataset="fsb" 
+    --experiment="fixing_selective_loop_v1_fsb"
+    --model_type="tcNF-base" --max_past_range=51 --self_optimization=True
+    --shadow_channels=False --sanity_check=True --use_checks_in_optimization=True
+    --code_configuration={\"st_linear\":true,\"batch_norm\":\"none\",\"input_embedding\":\"none\"}
+```
+
+### Configuration
+
+See `global_utils.py:80` all available configuration options.
+
+
+## 📚 Citation
+
+If you use CINDI in your research, please cite our paper:
+
+```
+@article{baumgartner2025cindi,
+    title={CINDI: Conditional Imputation and Noisy Data Integrity with Flows in Power Grid Data},
+    author={Baumgartner, David and Langseth, Helge and Ramampiaro, Heri},
+    journal={Engineering Applications of Artificial Intelligence},
+    year={2025},
+    note={Preprint}
+}
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+This work was carried out at **SFI NorwAI**, funded by the Research Council of Norway. 
+Special thanks to Aneo for providing the grid loss prediction dataset.
+
+
+
 
