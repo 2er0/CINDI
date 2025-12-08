@@ -1,0 +1,18 @@
+optimization_mapping = {
+    "gen": "Generation",
+    "can_id": "Candidate ID",
+    "opt_goal": "Optim. Goal",
+    "test_auc": "Test AUC",
+    "test_vus": "Test VUS",
+    "hidden_multiplier": "ST Multiplier",
+    "st_net_layers": "ST Layers",
+    "st_dropout": "ST Dropout",
+    "st_funnel_factor": "ST Funnel",
+    "coupling_layers": "Coupling Layers",
+    "past": "Past",
+    "encoder_layers": "Enc. Layers",
+    "encoder_size": "Enc. Size",
+    "encoder_dropout": "Enc. Dropout",
+    "encoder_compression_factor": "Enc. Funnel",
+    "encoder_channel_depth": "Enc. Depth",
+}
