@@ -21,7 +21,7 @@ built on **Conditional Normalizing Flows**.
 
 1. **Clone the repository:**
    ```
-   git clone …/CINDI.git
+   git clone XXXXXXX/CINDI.git
    cd CINDI
    ```
 
@@ -93,9 +93,9 @@ See `global_utils.py:80` all available configuration options.
 If you use CINDI in your research, please cite our paper:
 
 ```
-@article{baumgartner2025cindi,
+@article{XXXXXXX2025cindi,
     title={CINDI: Conditional Imputation and Noisy Data Integrity with Flows in Power Grid Data},
-    author={Baumgartner, David and Langseth, Helge and Ramampiaro, Heri},
+    author={XXXXXXX},
     journal={Engineering Applications of Artificial Intelligence},
     year={2025},
     note={Preprint}
@@ -108,7 +108,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgements
 
-This work was carried out at **SFI NorwAI**, funded by the Research Council of Norway. 
+
+This work was carried out XXXXXXX. 
 Special thanks to Aneo for providing the grid loss prediction dataset.
 
 
